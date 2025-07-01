@@ -110,3 +110,8 @@ body {
     opacity: 0.4;
     transform: rotate(30deg);
   }
+  .author {
+    padding: 6rem 2rem;
+    font-size: 1.5rem;
+
+  }
