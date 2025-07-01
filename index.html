@@ -2,37 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome | My Portfolio</title>
-  <link rel="stylesheet" href="stylesheet.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <nav>
-      <h1>Home</h1>
+    <nav class="nav">
+      <div class="logo">DF</div>
       <ul>
-        <li><a href="about.html">About Me</a></li>
         <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume & Skills</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><button id="theme-toggle">🌙</button></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact me</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="intro">
-      <h2>Hello, I'm Ben</h2>
-      <p>I'm a game designer graduate and back-end web developer. Welcome to my portfolio!</p>
-      <a class="btn" href="projects.html">Explore My Work</a>
-      <a class="github-link" href="https://github.com/yourgithub" target="_blank">GitHub ↗</a>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Hi:) I'm <span class="highlight">[Your Name]</span><br />a <span class="highlight">Game Developer</span></h1>
+        <p>With experience in game design and backend web development, I craft interactive and scalable experiences for players and users alike.</p>
+        <div class="hero-buttons">
+          <a href="projects.html" class="btn filled">See the projects</a>
+          <a href="resume.html" class="btn outlined">Go to CV</a>
+        </div>
+        <div class="social-icons">
+          <a href="#"><img src="email.svg" alt="Email"></a>
+          <a href="#"><img src="linkedin.svg" alt="LinkedIn"></a>
+          <a href="#"><img src="github.svg" alt="GitHub"></a>
+        </div>
+      </div>
+      <div class="hero-bg-shape"></div>
     </section>
   </main>
-
-  <footer>
-    <p>&copy; 2025 Your Name</p>
-  </footer>
 </body>
 </html>
