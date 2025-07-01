@@ -1,0 +1,92 @@
+:root {
+    --bg: #fff;
+    --text: #111;
+    --accent: #007acc;
+  }
+  
+  [data-theme="dark"] {
+    --bg: #111;
+    --text: #f1f1f1;
+    --accent: #66aaff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: sans-serif;
+    line-height: 1.6;
+    padding: 1rem;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+  }
+  
+  nav a, .btn {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: bold;
+  }
+  
+  .intro {
+    text-align: center;
+    margin: 2rem 0;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .github-link {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+  
+  section {
+    margin-top: 3rem;
+    padding: 1rem 0;
+    border-top: 1px solid #ccc;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 400px;
+  }
+  
+  input, textarea, button {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  button {
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
