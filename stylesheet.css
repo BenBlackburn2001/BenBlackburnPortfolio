@@ -3,7 +3,7 @@ body {
     font-family: 'Poppins', sans-serif;
     color: #fff;
     background: linear-gradient(135deg, #0f172a, #1e293b);
-    overflow-x: hidden;
+    overflow-x: visible;
   }
   
   .nav {
