@@ -115,3 +115,46 @@ body {
     font-size: 1.5rem;
 
   }
+  .about {
+    padding: 4rem 2rem;
+    color: #cbd5e1;
+  }
+  
+  .about-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .about-text {
+    flex: 1 1 60%;
+  }
+  
+  .about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  
+  .about p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .about-image {
+    flex: 1 1 30%;
+    text-align: center;
+  }
+  
+  .about-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 9999px;
+    object-fit: cover;
+    border: 3px solid #f472b6;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
