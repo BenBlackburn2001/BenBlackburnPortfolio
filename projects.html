@@ -2,39 +2,117 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="stylesheet.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <script defer src="script.js"></script>
+  <title>projects</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #007BFF, #0056b3);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin: 0;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .image-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .image-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .image-card .content {
+      padding: 15px;
+    }
+
+    .image-card .content h3 {
+      margin-top: 0;
+      font-size: 1.2em;
+    }
+
+    .image-card .content p {
+      font-size: 0.95em;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav class="nav">
-      <a class="logo" href="index.html">Home</a>
-      <ul>
-        <li><a href="aboutme.html">About Me</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume & Skills</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section class="about">
-      <div class="about-container">
-        <div class="about-text">
-          <h2>About Me</h2>
-          <p>
-            Through out my life many different games and ideas have been created this page will go over the projects that have been made.
-          </p>
+  <section class="hero">
+    <h1>Welcome to My Portfolio</h1>
+    <p>Explore my projects and creative work</p>
+  </section>
+
+  <section class="image-grid">
+    <div class="image-card">
+      <img src="https://via.placeholder.com/400x200?text=Project+1" alt="Project 1">
+      <div class="content">
+        <h3>Project One</h3>
+        <p>Brief description of the project or work.</p>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <footer>
-    <p>&copy; 2025 Ben Blackburn</p>
-  </footer>
+    <div class="image-card">
+      <img src="https://via.placeholder.com/400x200?text=Project+2" alt="Project 2">
+      <div class="content">
+        <h3>Project Two</h3>
+        <p>Brief description of the project or work.</p>
+      </div>
+    </div>
+
+    <div class="image-card">
+      <img src="https://via.placeholder.com/400x200?text=Project+3" alt="Project 3">
+      <div class="content">
+        <h3>Project Three</h3>
+        <p>Brief description of the project or work.</p>
+      </div>
+    </div>
+
+    <div class="image-card">
+      <img src="https://via.placeholder.com/400x200?text=Project+4" alt="Project 4">
+      <div class="content">
+        <h3>Project Four</h3>
+        <p>Brief description of the project or work.</p>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
