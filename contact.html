@@ -178,20 +178,6 @@
   });
 </script>
 
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    emailjs.sendForm('service_qhkx4fk', 'template_p1bkayq', this)
-      .then(function(response) {
-         console.log('SUCCESS!', response.status, response.text);
-         document.getElementById('successMessage').style.display = 'block';
-         document.getElementById('contactForm').reset();
-      }, function(error) {
-         console.log('FAILED...', error);
-      });
-  });
-</script>
 
 </body>
 </html>
