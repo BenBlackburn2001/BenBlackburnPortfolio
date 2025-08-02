@@ -111,7 +111,12 @@
 
   <header>
     <nav class="nav">
-      <a><div class="logo" href="index.html">Home</div></a>
+      <div class="logo" href="index.html">Home</div>
+      <script>
+        document.getElementById('divLink').addEventListener('click', function () {
+            window.location.href = "index.html";
+        });
+    </script>
       <ul>
         <li><a href="aboutme.html">About Me</a></li>
         <li><a href="projects.html">Projects</a></li>
