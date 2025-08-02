@@ -130,6 +130,13 @@
 
 <div id="successMessage" style="display: none;">Message sent!</div>
 
+<form id="contactForm">
+  <input type="email" name="email" id="email" placeholder="Your email" required />
+  <textarea name="message" placeholder="Your message" id="message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+<div id="successMessage" style="display:none;">Message sent!</div>
+
     <div class="other-contacts">
       <h3>Other Ways to Reach Me</h3>
       <ul>
@@ -161,6 +168,21 @@
     e.preventDefault();
     
     emailjs.sendForm('service_qhkx4fk', 'template_xhx1bom', this)
+      .then(function(response) {
+         console.log('SUCCESS!', response.status, response.text);
+         document.getElementById('successMessage').style.display = 'block';
+         document.getElementById('contactForm').reset();
+      }, function(error) {
+         console.log('FAILED...', error);
+      });
+  });
+</script>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    emailjs.sendForm('service_qhkx4fk', 'template_p1bkayq', this)
       .then(function(response) {
          console.log('SUCCESS!', response.status, response.text);
          document.getElementById('successMessage').style.display = 'block';
