@@ -2,36 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Me</title>
-  <link rel="stylesheet" href="stylesheet.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <script defer src="script.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+      color: #333;
+    }
+
+    .contact-section {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 120px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      background-color: #007BFF;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .other-contacts {
+      margin-top: 25px;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+    }
+
+    .other-contacts ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .other-contacts li {
+      margin: 10px 0;
+    }
+
+    .other-contacts a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .other-contacts a:hover {
+      text-decoration: underline;
+    }
+
+    .success-message {
+      color: green;
+      margin-top: 15px;
+      display: none;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav class="nav">
-      <h1><a class="logo" href="index.html">Home</a></h1>
-      <ul>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="resume.html">Resume & Skills</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section class="about">
-      <div class="about-container">
-        <div class="about-text">
-        
-        </div>
+  <div class="contact-section">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required />
       </div>
-    </section>
-  </main>
+      <div class="form-group">
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+      <div class="success-message" id="successMessage">Message sent successfully!</div>
+    </form>
 
-  <footer>
-    <p>&copy; 2025 Ben Blackburn</p>
-  </footer>
+    <div class="other-contacts">
+      <h3>Other Ways to Reach Me</h3>
+      <ul>
+        <li>📞 Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></li>
+        <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></li>
+        <li>🐱 GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></li>
+        <li>📧 Email: <a href="mailto:your@email.com">your@email.com</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Basic client-side handling for demonstration
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Simulate a successful submission
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (email && message) {
+        document.getElementById('successMessage').style.display = 'block';
+        document.getElementById('contactForm').reset();
+      }
+    });
+  </script>
+
 </body>
 </html>
