@@ -4,16 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Me</title>
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "YskYNttr0mygnDq5X",
-      });
-   })();
-</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("YskYNttr0mygnDq5X"); // Your Public Key
+    })();
+  </script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -45,6 +43,7 @@
       margin-bottom: 5px;
     }
 
+    input[type="text"],
     input[type="email"],
     textarea {
       width: 100%;
@@ -104,38 +103,33 @@
       display: none;
     }
   </style>
-
 </head>
 <body>
+
   <header>
     <nav class="nav">
       <div class="logo">Home</div>
-       <ul>
-         <li><a href="aboutme.html">About Me</a></li>
-         <li><a href="projects.html">Projects</a></li>
-         <li><a href="resume.html">Resume</a></li>
-         <li><a href="contact.html">Contact me</a></li>
-       </ul>
+      <ul>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
     </nav>
   </header>
 
   <div class="contact-section">
     <h2>Contact Me</h2>
-<form id="contactForm">
-  <input type="email" name="email" id="email" placeholder="Your email" required />
-  <textarea name="message" id="message" placeholder="Your message" required></textarea>
-  <button type="submit">Send Message</button>
-  <input type="hidden" name="to_email" value="ben.j.c.blackburn@gmail.com" />
-</form>
 
-<div id="successMessage" style="display: none;">Message sent!</div>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <input type="text" name="title" placeholder="Subject" required />
+      <textarea name="message" placeholder="Your message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
 
-<form id="contactForm">
-  <input type="email" name="email" id="email" placeholder="Your email" required />
-  <textarea name="message" placeholder="Your message" id="message" required></textarea>
-  <button type="submit">Send Message</button>
-</form>
-<div id="successMessage" style="display:none;">Message sent!</div>
+    <div id="successMessage" class="success-message">Message sent successfully!</div>
 
     <div class="other-contacts">
       <h3>Other Ways to Reach Me</h3>
@@ -149,46 +143,18 @@
   </div>
 
   <script>
-    // Basic client-side handling for demonstration
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
 
-      // Simulate a successful submission
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-
-      if (email && message) {
-        document.getElementById('successMessage').style.display = 'block';
-        document.getElementById('contactForm').reset();
-      }
+      emailjs.sendForm("service_qhkx4fk", "template_xhx1bom", this)
+        .then(function(response) {
+          console.log("SUCCESS!", response.status, response.text);
+          document.getElementById("successMessage").style.display = "block";
+          document.getElementById("contactForm").reset();
+        }, function(error) {
+          console.log("FAILED...", error);
+        });
     });
   </script>
-<script>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    emailjs.sendForm('service_qhkx4fk', 'template_xhx1bom', this)
-      .then(function(response) {
-         console.log('SUCCESS!', response.status, response.text);
-         document.getElementById('successMessage').style.display = 'block';
-         document.getElementById('contactForm').reset();
-      }, function(error) {
-         console.log('FAILED...', error);
-      });
-
-      emailjs.sendForm('service_qhkx4fk', 'template_p1bkayq', this)
-      .then(function(response) {
-         console.log('SUCCESS!', response.status, response.text);
-         document.getElementById('successMessage').style.display = 'block';
-         document.getElementById('contactForm').reset();
-      }, function(error) {
-         console.log('FAILED...', error);
-      });
-  });
-  
-</script>
-
-
-
 </body>
 </html>
