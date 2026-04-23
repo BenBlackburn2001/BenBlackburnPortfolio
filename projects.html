@@ -90,7 +90,7 @@
 
 
   <section class="image-grid">
-    <div class="image-card">
+    <div class="image-card" role="button" tabindex="0" data-title="Narrative Game" data-description="A branching narrative game built with Unity. Built systems for save/load, dialogue, and branching outcomes." data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
       <img src="https://via.placeholder.com/400x200?text=Project+1" alt="Project 1">
       <div class="content">
         <h3>Narrative Game </h3>
@@ -98,7 +98,7 @@
       </div>
     </div>
 
-    <div class="image-card">
+    <div class="image-card" role="button" tabindex="0" data-title="Virtual Reality Arcade" data-description="An arcade experience built for VR headsets featuring multiple mini-games and local leaderboards." data-video="">
       <img src="https://via.placeholder.com/400x200?text=Project+2" alt="Project 2">
       <div class="content">
         <h3>Virtual Reality Arcade</h3>
@@ -106,7 +106,7 @@
       </div>
     </div>
 
-    <div class="image-card">
+    <div class="image-card" role="button" tabindex="0" data-title="Multiplayer 1V1 Game" data-description="A real-time 1v1 multiplayer prototype with matchmaking and latency smoothing." data-video="">
       <img src="https://via.placeholder.com/400x200?text=Project+3" alt="Project 3">
       <div class="content">
         <h3>Mulitplayer 1V1 game</h3>
@@ -114,7 +114,7 @@
       </div>
     </div>
 
-    <div class="image-card">
+    <div class="image-card" role="button" tabindex="0" data-title="VR Training Sim" data-description="A virtual reality training simulator used to teach procedural tasks in a safe environment." data-video="">
       <img src="https://via.placeholder.com/400x200?text=Project+4" alt="Project 4">
       <div class="content">
         <h3>Virtual reality training sim</h3>
@@ -122,6 +122,20 @@
       </div>
     </div>
   </section>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+      <div id="modal-video-container"></div>
+      <a id="modal-link" class="modal-link" href="#" target="_blank" rel="noopener" style="display:none;">Open on YouTube</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
   
 
 </body>
