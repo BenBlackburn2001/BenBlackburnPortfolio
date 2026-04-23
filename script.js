@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalVideoContainer = document.getElementById('modal-video-container');
     const modalLink = document.getElementById('modal-link');
 
+    console.log('project modal init', { modal: !!modal, overlay: !!modalOverlay, close: !!modalClose });
+
     function openModalForCard(card) {
       const title = card.dataset.title || '';
       const desc = card.dataset.description || '';
@@ -54,8 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
         modalLink.style.display = 'inline-block';
       }
 
-      modal.classList.add('open');
-      modal.setAttribute('aria-hidden', 'false');
+      if (modal) {
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+      }
     }
 
     function closeModal() {
@@ -65,13 +69,15 @@ document.addEventListener("DOMContentLoaded", () => {
       modalVideoContainer.innerHTML = '';
     }
 
-    document.querySelectorAll('.image-card').forEach(card => {
+    const cards = document.querySelectorAll('.image-card');
+    console.log('found cards', cards.length);
+    cards.forEach(card => {
       card.addEventListener('click', () => openModalForCard(card));
       card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModalForCard(card); } });
     });
 
-    modalOverlay.addEventListener('click', closeModal);
-    modalClose.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+    if (modalClose) modalClose.addEventListener('click', closeModal);
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   });
   
